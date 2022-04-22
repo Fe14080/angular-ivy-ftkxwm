@@ -12,16 +12,20 @@ export class AppComponent implements OnInit {
 
   nome: string;
   idade: number;
-  pessoas: any[];
+  pessoas: any = [];
 
   adicionar() {
     this.pessoas.push({
       nome: this.nome,
       idade: this.idade,
     });
+    this.nome = null;
+    this.idade = null;
   }
 
-  remover() {}
+  remover(index: number) {
+    this.pessoas.splice(index, 1);
+  }
 
   constructor() {}
 }

@@ -12,7 +12,12 @@
       class="form-control"
       placeholder="Idade"
     />
-    <button (click)="adicionar()" type="button" class="btn btn-primary">
+    <button
+      [disabled]="!idade || !nome"
+      (click)="adicionar()"
+      type="button"
+      class="btn btn-primary"
+    >
       Adicionar
     </button>
   </div>
@@ -24,7 +29,7 @@
     class="list-group-item d-flex justify-content-between align-items-start"
   >
     {{ index }} - {{ pessoa.nome }} {{ pessoa.idade }} anos
-    <button (click)="remover()" type="button" class="btn-close"></button>
+    <button (click)="remover(index)" type="button" class="btn-close"></button>
   </li>
 </ul>
 
